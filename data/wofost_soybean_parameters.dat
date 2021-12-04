@@ -1,0 +1,92 @@
+# Crop data file for use with WOFOST, soybean version for SIGMA project
+# Allard de Wit 2015/06/18
+# 
+# parameter values for phenology  and functions for photoperiod and temperature derived from:
+# Understanding and modeling the effect of temperature and daylength on soybean phenology
+# under high-yield conditions. Setiyono et al. 2007. doi 10.1016/j.fcr.2006.07.011
+# http://digitalcommons.unl.edu/agronomyfacpub/112
+
+# crop identity
+CRPNAM  = 'Soybean (Glycine max (L.) Merril)'
+
+# emergence
+TBASEM   =   7.0    # lower threshold temp. for emergence [cel]
+TEFFMX   =  22.0    # max. eff. temp. for emergence [cel]
+TSUMEM   =  90.     # temperature sum from sowing to emergence [cel d]
+
+# phenology 
+
+MG=3
+
+
+Tmin = 7.0          # Minimum temperature for development rates 
+Topt = 31.0         # optimal temperature ...
+Tmax = 40.0         # Maximum temperature ...
+Tmin_Rep = 0.       # Minimum temperature for development rates 
+Topt_Rep = 21.5     # optimal temperature ...
+Tmax_Rep = 38.7     # Maximum temperature ...
+
+
+DVSI = 0.           # initial DVS
+DVSEND   =   2.00   # development stage at harvest (= 2.0 at maturity [-])
+
+
+## Senescence rate from LINTUL
+RDRT    =  [  0,    0.09,   # senescence rate (%)
+             10,    0.05,   # as a function of average temperature 
+             20,    0.04,
+             30,    0.03,
+             40,    0.05,
+             50,    0.09]
+# partitioning
+FRTB     =  [0.00,    0.65,     # fraction of total dry matter to roots
+             0.75,    0.35,     # as a function of DVS [-; kg kg-1]
+             1.00,    0.15,
+             1.50,    0.00,
+             2.00,    0.00]
+
+FLTB     =  [0.00,    0.70,     # fraction of above-gr. DM to leaves
+             0.50,    0.60,            
+             1.00,    0.40,             
+             1.30,    0.30,
+             1.50,    0.20,
+             2.00,    0.00]
+FSTB     =  [0.00,    0.30,     # fraction of above-gr. DM to stems
+             0.50,    0.40,
+             1.00,    0.60,             
+             1.30,    0.20,
+             1.50,    0.00,
+             2.00,    0.00]
+FOTB     =  [0.00,    0.00,     # fraction of above-gr. DM to stor. org.
+             0.50,    0.00,
+             1.00,    0.00,     # as a function of DVS [-; kg kg-1]                          
+             1.30,    0.50,
+             1.50,    0.80,
+             2.00,    1.00]			 
+             
+# green area
+SLATB    =   [0.00,    0.0014,   # specific leaf area  
+             0.45,    0.002,   # as a function of DVS [-; ha kg-1]
+             1.00,    0.002,
+             2.00,    0.0007]
+
+
+initLAI=0.2
+
+K = 0.48
+Ppar = 0.47
+FTRANSL = 0.22
+GCC = 0.77
+HD = 1.149
+RDRSHM = 0.03
+LAIC = 4
+
+FNTR=3
+NTR = 0.065
+LNTR = 0.04
+WUE = 4
+
+DSLA = 25
+RUE = 2.84
+IRRI=0      #0==rainfed; 1==irrigated 
+
